@@ -1,0 +1,41 @@
+//
+let person : {name:string,age:number}={
+  name:'hanh',
+  age:20,
+}
+//
+type Student = {
+  name:string,
+}
+let student: Student = {
+  name:'hanh',
+}
+student.name = 'hanh dth'
+// console.log(student.name);
+//
+const thing:(age:number) => string[] = (age:number)=>{
+  let name:string[] = ['1','2'];
+  age=12;
+  return name ;
+}
+type Name = {
+  name:string;
+}
+
+type StudentDetail = Name & {
+  age:number ,
+  add ?: string ,
+}
+let student2 : StudentDetail = {
+  name :'hanh',
+  age:21,
+  // add:'hi'
+}
+interface Name2 {
+  name:string;
+}
+interface StudentDetail2 extends Name2 {
+age:number , 
+add?:string
+}
+console.log(student2);
