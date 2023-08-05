@@ -1,0 +1,2 @@
+# pokemon-typescript-reactjs
+pokemon
