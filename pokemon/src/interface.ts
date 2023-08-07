@@ -6,3 +6,10 @@ export interface Pokemon{
       front_default: string,
     }
   }
+  export interface PokemonDT extends Pokemon {
+    abilities?: {
+      ability:string;
+      name:string;
+    }[];
+  }  
+  
