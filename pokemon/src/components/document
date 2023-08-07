@@ -39,3 +39,4 @@ age:number ,
 add?:string
 }
 console.log(student2);
+// type
