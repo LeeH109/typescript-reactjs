@@ -63,9 +63,9 @@ const Home: React.FC = () => {
   };
 
   //
-
+// w 4/5
   return (
-    <div className="container flex flex-col  w-5/6 m-auto ">
+    <div className="container flex flex-col  w-4/5 m-auto ">
       {/* // */}
       <div className="w-4/6 ml-2 mt-10 ">
         <Search value={value} setValue={setValue} list={listSearch} />
@@ -74,7 +74,7 @@ const Home: React.FC = () => {
       <div className=" mt-5 z-10  ">
         <ListCard pokemons={listCard} detail={detail} setDetail={setDetail} />
       </div>
-      <div className="ml-3">
+      <div className="ml-3 mb-20">
         <button
           onClick={handleLoadingData}
           className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"

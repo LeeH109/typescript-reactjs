@@ -34,16 +34,16 @@ const Card : React.FC<Props> = ({name,image,id,setDetail,detail,abilities}) => {
   //   // 
   //   setSelected(id === detail?.id);
   // },[detail])
-
+  // w-64 
   return (
     <>
  <div className="">
-    <div className= 'bg-white  mb-7 w-64 mx-3 mt-2 overflow-hidden rounded-xl shadow-blue-gray-500/40 shadow-lg '>
+    <div className= 'bg-white  mb-7 mx-3 mt-2 overflow-hidden rounded-xl shadow-blue-gray-500/40 shadow-lg '>
            <div
-            className=" mx-20 items-center  mt-3 h-20 
+            className=" flex m-auto items-center  w-28  mt-3 h-20 
      bg-blue-gray-200 bg-clip-border text-white "
           >
-            <img src={image} />
+            <img src={image} className='m-auto w-full' />
           </div>
           {/* {types.type .map((ab: any) => {
               return <div className=""> {ab.name}</div>;

@@ -28,10 +28,12 @@ const ListCard: React.FC<Props> = ({ pokemons, detail, setDetail }) => {
     // }
     // console.log(detail);
   };
-
-  return (
-    <div className="flex">
-      <div className="  flex flex-wrap w-3/4 m-auto mt-36 sm:w-full">
+console.log(pokemons.length);
+  return ( 
+    <div className="flex w-full">
+      {/* <div className="  flex flex-wrap w-3/4 m-auto mt-36 sm:w-full"> */}
+      <div className="w-3/4 sm:w-full md:w-full">
+      <div className={` grid grid-cols-3  gap-x-0 gap-y-4 w-4/6 m-auto mt-24 sm:w-full md:grid-cols-2  lg:grid-cols-3 sm:grid-cols-2 `} >
         {pokemons.map((pokemon) => {
           return (
             <div onClick={() => handlePokemonDetail(pokemon.id)}>
@@ -49,8 +51,9 @@ const ListCard: React.FC<Props> = ({ pokemons, detail, setDetail }) => {
             </div>
           );
         })}
-      </div>
-      <div className="flex w-[414px]    ">
+      </div></div>
+      
+      <div className=" w-[415px]  hidden lg:block xl:block   ">
         {selectId ? (
           <div
             className={`fixed w-[380px]   ${
@@ -60,9 +63,10 @@ const ListCard: React.FC<Props> = ({ pokemons, detail, setDetail }) => {
             <CardDetail pokemons={pokemons} id={selectId} />
           </div>
         ) : (
-          <div className="fixed w-[380px]">
+          // w-[380px]
+          <div className="fixed w-1/4">
           <div
-              className="w-full  mt-24  relative"
+              className="w-full  mt-14  relative"
             >
               <div className="h-[700px]  w-11/12 bg-white m-auto bg-clip-border rounded-xl shadow-lg shadow-blue-gray-500/40 ">
                 <div className="w-24 absolute -top-28 right-1/3">

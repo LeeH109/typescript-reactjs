@@ -11,7 +11,7 @@ const CardDetail: React.FC<Props> = ({ id, pokemons }) => {
 
   return (
     // h-[620px] 
-    <div className="w-full  mt-24 h-[100vh] relative
+    <div className="w-full  mt-14 h-[100vh] relative
      ">
       <div className="  w-11/12 bg-white m-auto bg-clip-border rounded-xl shadow-lg shadow-blue-gray-500/40 ">
         <div className="w-24 absolute top-[-75px] right-1/3">
