@@ -32,8 +32,8 @@ console.log(pokemons.length);
   return ( 
     <div className="flex w-full">
       {/* <div className="  flex flex-wrap w-3/4 m-auto mt-36 sm:w-full"> */}
-      <div className="w-3/4 sm:w-full md:w-full">
-      <div className={` grid grid-cols-3  gap-x-0 gap-y-4 w-4/6 m-auto mt-24 sm:w-full md:grid-cols-2  lg:grid-cols-3 sm:grid-cols-2 `} >
+      <div className="w-3/4 min-[300px]:w-full">
+      <div className={` grid grid-cols-3  gap-x-0 gap-y-4 w-4/6 m-auto mt-24 sm:w-full md:grid-cols-2  lg:grid-cols-3 sm:grid-cols-2 min-[300px]:grid-cols-2 min-[300px]:w-full `} >
         {pokemons.map((pokemon) => {
           return (
             <div onClick={() => handlePokemonDetail(pokemon.id)}>
@@ -53,7 +53,7 @@ console.log(pokemons.length);
         })}
       </div></div>
       
-      <div className=" w-[415px]  hidden lg:block xl:block   ">
+      <div className=" w-[430px]  hidden lg:block xl:block  md:block  ">
         {selectId ? (
           <div
             className={`fixed w-[380px]   ${

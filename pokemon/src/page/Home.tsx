@@ -65,7 +65,7 @@ const Home: React.FC = () => {
   //
 // w 4/5
   return (
-    <div className="container flex flex-col  w-4/5 m-auto ">
+    <div className="container flex flex-col  w-10/12 m-auto ">
       {/* // */}
       <div className="w-4/6 ml-2 mt-10 ">
         <Search value={value} setValue={setValue} list={listSearch} />
