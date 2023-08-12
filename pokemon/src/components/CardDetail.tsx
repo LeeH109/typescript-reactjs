@@ -7,11 +7,8 @@ interface Props {
 }
 const CardDetail: React.FC<Props> = ({ id, pokemons }) => {
 
-
   const pokemondetail = pokemons.find((pokemon) => pokemon.id === id);
-//   console.log(pokemondetail?.types.map((ab: any) => {
-//     return <div className=""> {ab.type.name}</div>;
-//   }));
+
   return (
     // h-[620px] 
     <div className="w-full  mt-24 h-[100vh] relative

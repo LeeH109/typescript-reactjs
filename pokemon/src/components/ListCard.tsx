@@ -11,7 +11,7 @@ interface Props {
 
 const ListCard: React.FC<Props> = ({ pokemons, detail, setDetail }) => {
   const [selectId, setSelectId] = useState<number>();
-  const [animation, setAnimation] = useState(false);
+  const [animation, setAnimation] = useState<boolean>(false);
   const handlePokemonDetail = (id: number) => {
     // mở
     setSelectId(id);
@@ -31,7 +31,7 @@ const ListCard: React.FC<Props> = ({ pokemons, detail, setDetail }) => {
 
   return (
     <div className="flex">
-      <div className="  flex flex-wrap w-3/4 m-auto mt-36">
+      <div className="  flex flex-wrap w-3/4 m-auto mt-36 sm:w-full">
         {pokemons.map((pokemon) => {
           return (
             <div onClick={() => handlePokemonDetail(pokemon.id)}>
@@ -50,7 +50,7 @@ const ListCard: React.FC<Props> = ({ pokemons, detail, setDetail }) => {
           );
         })}
       </div>
-      <div className="flex w-[414px]   ">
+      <div className="flex w-[414px]    ">
         {selectId ? (
           <div
             className={`fixed w-[380px]   ${

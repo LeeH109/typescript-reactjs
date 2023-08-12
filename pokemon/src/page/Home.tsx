@@ -6,27 +6,18 @@ import CardDetail from "../components/CardDetail";
 import Search from "../components/Search/Search";
 
 const Home: React.FC = () => {
-
   const [listPokemon, setListPokemon] = useState<Pokemon[]>([]);
   const [listSearch, setListSearch] = useState<Pokemon[]>([]);
+  const [nextUrl, setNextUrl] = useState<string>("");
+  // const [previousUrl, setPreviousUrl] = useState<string>("");
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [value, setValue] = useState("");
   const [detail, setDetail] = useState<DetailPokemon>({
     id: 0,
     isOpened: false,
   });
-  // const [inputSearch,setInputSearch] = useState('');
-  const [value,setValue] = useState('')
-  console.log(value);
-
-  useEffect(()=>{
-      const getDataSearch = async()=>{
-         const res = await axios.get(
-         "https://pokeapi.co/api/v2/pokemon/"
-         );
-         console.log(res.data.results);
-        
-      }
-      getDataSearch()
-  },[])
+  // console.log(value);
+  const listCard = value ? listSearch : listPokemon;
 
   // lay du lieu => setlist
   useEffect(() => {
@@ -34,8 +25,8 @@ const Home: React.FC = () => {
       const res = await axios.get(
         "https://pokeapi.co/api/v2/pokemon?limit=20&offset20"
       );
-      // console.log((await res).data);
-
+      setNextUrl(res.data.next);
+      console.log((await res).data);
       // lấy từng con trong mảng
       res.data.results.forEach(async (pokemons: Pokemon) => {
         const pk = await axios.get(
@@ -46,34 +37,50 @@ const Home: React.FC = () => {
     };
     getData();
   }, []);
-  const results = listPokemon.filter(
-    (item) =>
-        item.name.toLowerCase().indexOf(value.toLowerCase()) !==
-        -1
-);
-console.log(results);
 
+  //
+  useEffect(() => {
+    const results = listPokemon.filter(
+      (item) => item.name.toLowerCase().indexOf(value.toLowerCase()) !== -1
+    );
+    setListSearch(results);
+    console.log(results);
+  }, [listPokemon, value]);
+  //
+  const handleLoadingData = async () => {
+    setIsLoading(true);
+    const res = await axios.get(nextUrl);
+    setNextUrl(res.data.next);
+    // console.log(res.data.next);
+    // console.log(nextUrl);
+    res.data.results.forEach(async (pokemons: Pokemon) => {
+      const pk = await axios.get(
+        `https://pokeapi.co/api/v2/pokemon/${pokemons.name}`
+      );
+      setListPokemon((p) => [...p, pk.data]);
+      setIsLoading(false);
+    });
+  };
 
-  //   console.log(listPokemon);
-  const listCard = value ? listSearch : listPokemon;
+  //
+
   return (
     <div className="container flex flex-col  w-5/6 m-auto ">
-     {results.map((item)=>{
-      return <>
-{item.name}
-      </>
-})}
-{/* // */}
+      {/* // */}
       <div className="w-4/6 ml-2 mt-10 ">
         <Search value={value} setValue={setValue} list={listSearch} />
       </div>
- 
+
       <div className=" mt-5 z-10  ">
-        <ListCard
-          pokemons={listCard}
-          detail={detail}
-          setDetail={setDetail}
-        />
+        <ListCard pokemons={listCard} detail={detail} setDetail={setDetail} />
+      </div>
+      <div className="ml-3">
+        <button
+          onClick={handleLoadingData}
+          className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
+        >
+          {isLoading ? "Loading..." : "Load more"}{" "}
+        </button>
       </div>
     </div>
   );
