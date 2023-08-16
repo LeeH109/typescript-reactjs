@@ -46,6 +46,7 @@ console.log(pokemons.length);
                 abilities={pokemon.abilities}
                 detail={detail}
                 setDetail={setDetail}
+                types={pokemon.types}
                 // types={pokemon.types }
               />
             </div>

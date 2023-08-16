@@ -18,6 +18,26 @@ module.exports = {
     },
     extend: {
       colors: {
+        // 
+        fire:"#FF421C",
+        poison:"#AB549A",
+        grass:"#78CD54",
+        water:"#2F9AFF",
+        bug:"#ABBC1C",
+        normal:"#BCBCAC",
+        flying:"#669AFF",
+        electric:"#FFCD30",
+        ground:"#DEBC54",
+        fairy:"#FFACFF",
+        fighting:"#BC5442",
+        psychic:"#FF549A",
+        rock:"#BCAC66",
+        ghost:"#6666BC",
+        ice:"#78DEFF",
+        steel:"#ABACBC",
+        dragon:'#7866EF',
+        dark:'#785442',
+        // 
         primary: "#222222",
         secondary: "#F5E6E0",
       },

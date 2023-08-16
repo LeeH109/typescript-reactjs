@@ -36,6 +36,9 @@ const CardDetail: React.FC<Props> = ({ id, pokemons }) => {
             {pokemondetail?.abilities?.map((ab: any) => {
               return <div className=""> {ab.ability.name}</div>;
             })}
+            {pokemondetail?.types?.map((ab:any)=>{
+  return <div className=""> {ab.type.name}</div>;
+            })}
           </p>
         </div>
       </div>
