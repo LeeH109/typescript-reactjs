@@ -60,16 +60,17 @@ const Card : React.FC<Props> = ({name,image,id,setDetail,detail,abilities,types}
           <div className="pt-8 pb-2 text-center">
           <p className='text-gray-400 font-medium'>  N°{id}</p>
             <h5
-              className=" block font-sans text-md capitalize mt-1 font-black  text-center
+              className=" block mb-1 font-sans text-md capitalize mt-1 font-black  text-center
         leading-snug tracking-normal text-blue-gray-900 antialiased"
             >
               {name}
             </h5>
         
         </div>
-        <div className="flex w-2/3 m-auto text-center mb-7 ">
+        <div className=" flex justify-center m-auto text-center mb-6 ">
         {types?.map((ab:any)=>{
-  return <div className={` bg-${ab.type.name} bg-normal px-4 py-1 border-1 rounded-md m-auto text-md font-bold capitalize  `}> {ab.type.name}</div>;
+  return <div className={` bg-${ab.type.name} bg-normal px-4 py-1 border-1
+   rounded-md  text-md font-bold capitalize mx-1 `}> {ab.type.name}</div>;
             })}
             
         </div>
