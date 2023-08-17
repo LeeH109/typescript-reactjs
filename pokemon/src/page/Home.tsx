@@ -67,11 +67,11 @@ const Home: React.FC = () => {
   return (
     <div className="container flex flex-col  w-10/12 m-auto ">
       {/* // */}
-      <div className="w-4/6 ml-2 mt-10 ">
+      <div className="w-3/5 ml-14 mt-10 ">
         <Search value={value} setValue={setValue} list={listSearch} />
       </div>
 
-      <div className=" mt-5 z-10  ">
+      <div className=" -mt-8 z-10  ">
         <ListCard pokemons={listCard} detail={detail} setDetail={setDetail} />
       </div>
       <div className="ml-3 mb-20">

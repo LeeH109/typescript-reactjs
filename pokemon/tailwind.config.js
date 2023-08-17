@@ -43,6 +43,7 @@ module.exports = {
       },
       backgroundImage: {
         hero: "url('./img/bg_hero.svg')",
+        pattern :"url('/src/img/bg_pattern.png')",
       },
       keyframes: {
         wiggle: {

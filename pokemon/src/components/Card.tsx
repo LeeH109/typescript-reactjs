@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { DetailPokemon, Pokemon, PokemonType } from '../interface';
 import CardDetail from './CardDetail';
+import { type } from 'os';
 
 
 interface Props{
@@ -32,7 +33,6 @@ interface Props{
     
 }
 
-
 const Card : React.FC<Props> = ({name,image,id,setDetail,detail,abilities,types}) => {
   //  const  [selected , setSelected] = useState(false);
 
@@ -41,32 +41,36 @@ const Card : React.FC<Props> = ({name,image,id,setDetail,detail,abilities,types}
   //   setSelected(id === detail?.id);
   // },[detail])
   // w-64 
+  console.log(types);
+
   return (
     <>
- <div className="">
-    <div className= 'bg-white  mb-7 mx-3 mt-2 overflow-hidden rounded-xl shadow-blue-gray-500/40 shadow-lg '>
-           <div
-            className=" flex m-auto items-center  w-28  -mt-1 h-20 
-     bg-blue-gray-200 bg-clip-border text-white "
+ <div className="group">
+ <div
+            className=" flex m-auto items-center  w-28  h-20 
+     bg-blue-gray-200 bg-clip-border text-white mb-4 -mt-3"
           >
-            <img src={image} className='m-auto w-full' />
+            <img src={image} className='m-auto w-full mt-6  transition-transform duration-300 group-hover:scale-105'  />
           </div>
+    <div className= 'border-2 border-transparent hover:border-solid   hover:border-gray-200 bg-white  mb-7 mx-3  overflow-hidden rounded-xl shadow-blue-gray-500/40 shadow-lg '>
+           
           {/* {types.type .map((ab: any) => {
               return <div className=""> {ab.name}</div>;
             })} */}
-          <div className="p-2">
+          <div className="pt-9 pb-7">
             <h5
-              className="mb-2 block font-sans text-sm font-semibold text-center
+              className=" block font-sans text-md uppercase  font-semibold text-center
         leading-snug tracking-normal text-blue-gray-900 antialiased"
             >
               {name}
             </h5>
         
         </div>
-        <div className="flex w-2/3 m-auto text-center mb-4 ">
+        <div className="flex w-2/3 m-auto text-center mb-7 ">
         {types?.map((ab:any)=>{
-  return <div className={` bg-${ab.type.name}   px-4 py-1 border-1 rounded-md m-auto text-md font-bold capitalize  `}> {ab.type.name}</div>;
+  return <div className={` bg-${ab.type.name} px-4 py-1 border-1 rounded-md m-auto text-md font-bold capitalize  `}> {ab.type.name}</div>;
             })}
+            
         </div>
         </div>  
  </div>

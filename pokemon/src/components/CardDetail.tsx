@@ -11,7 +11,7 @@ const CardDetail: React.FC<Props> = ({ id, pokemons }) => {
 
   return (
     // h-[620px] 
-    <div className="w-full  mt-14 h-[100vh] relative
+    <div className="w-full  mt-14  relative
      ">
       <div className="  w-11/12 bg-white m-auto bg-clip-border rounded-xl shadow-lg shadow-blue-gray-500/40 ">
         <div className="w-24 absolute top-[-75px] right-1/3">
@@ -31,7 +31,7 @@ const CardDetail: React.FC<Props> = ({ id, pokemons }) => {
           >
             {pokemondetail?.name}
           </h5>
-          <p className="block font-sans text-base font-light leading-relaxed text-inherit antialiased">
+          <p className=" mb-96 block font-sans text-base font-light leading-relaxed text-inherit antialiased">
             Ablities:
             {pokemondetail?.abilities?.map((ab: any) => {
               return <div className=""> {ab.ability.name}</div>;

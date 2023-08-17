@@ -10,7 +10,7 @@ const App: React.FC = () => {
 
 
   return (
-    <div className="App bg-slate-50 w-full ">
+    <div className="App bg-pattern bg-no-repeat bg-[left_-160px_top_-100px] bg-left-top bg-slate-50 w-full ">
     
       
       <div className="">  <Home/></div>
