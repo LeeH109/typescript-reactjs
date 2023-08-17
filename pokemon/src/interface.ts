@@ -14,6 +14,9 @@ export interface Pokemon {
   url?: string;
   types: PokemonType[];
   sprites: PokemonSprites;
+  height:number;
+  weight:number;
+  stats:PokemonStats[];
 }
 
 export interface PokemonType {
@@ -29,6 +32,10 @@ export interface PokemonSprites {
   versions?: PokemonVersions;
 }
 
+export interface PokemonStats {
+  base_stats: number;
+  
+}
 export interface PokemonVersions {
   "generation-v": PokemonGenerationV;
 }

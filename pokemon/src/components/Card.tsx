@@ -34,13 +34,9 @@ interface Props{
 }
 
 const Card : React.FC<Props> = ({name,image,id,setDetail,detail,abilities,types}) => {
-  //  const  [selected , setSelected] = useState(false);
 
-  // useEffect(()=>{
-  //   // 
-  //   setSelected(id === detail?.id);
-  // },[detail])
-  // w-64 
+
+  
   console.log(types);
 
   return (

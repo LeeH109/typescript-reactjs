@@ -27,6 +27,7 @@ const Home: React.FC = () => {
       );
       setNextUrl(res.data.next);
       console.log((await res).data);
+      console.log(res.data);
       // lấy từng con trong mảng
       res.data.results.forEach(async (pokemons: Pokemon) => {
         const pk = await axios.get(
@@ -51,7 +52,7 @@ const Home: React.FC = () => {
     setIsLoading(true);
     const res = await axios.get(nextUrl);
     setNextUrl(res.data.next);
-    // console.log(res.data.next);
+    // console.log(res.data);
     // console.log(nextUrl);
     res.data.results.forEach(async (pokemons: Pokemon) => {
       const pk = await axios.get(
